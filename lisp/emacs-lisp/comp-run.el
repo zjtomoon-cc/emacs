@@ -239,7 +239,8 @@ processes from `comp-async-compilations'"
 
 (defvar comp-last-scanned-async-output nil)
 (make-variable-buffer-local 'comp-last-scanned-async-output)
-(defvar warning-suppress-types)
+;; HACK
+(defvar warning-suppress-types nil)
 (defun comp-accept-and-process-async-output (process)
   "Accept PROCESS output and check for diagnostic messages."
   (if native-comp-async-report-warnings-errors
