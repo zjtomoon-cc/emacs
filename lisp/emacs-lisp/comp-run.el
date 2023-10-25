@@ -29,7 +29,6 @@
 ;;; Code:
 
 (eval-when-compile (require 'cl-lib))
-(require 'warnings)
 
 (defgroup comp-run nil
   "Emacs Lisp native compiler runtime."
@@ -240,6 +239,7 @@ processes from `comp-async-compilations'"
 
 (defvar comp-last-scanned-async-output nil)
 (make-variable-buffer-local 'comp-last-scanned-async-output)
+(defvar warning-suppress-types)
 (defun comp-accept-and-process-async-output (process)
   "Accept PROCESS output and check for diagnostic messages."
   (if native-comp-async-report-warnings-errors
